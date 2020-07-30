@@ -1,34 +1,35 @@
-/ * 
-
+/*  
 Note: To run this code open the Health Work Tracker Survey Page
 Link: https://forms.office.com/Pages/ResponsePage.aspx?id=mT-XW99360uyfaoMcLhILE31fuiRD4FFnNO_2OVb2YRUQUVSWlg0NDJGOU5OMVM3WEs5SDZNSkZLVS4u
 
 Remarks: For the 1st question Select Yes and Hit Next
 Afterwards open developers mode of the browser Press F12 
 Navigate to the Console Page and paste the code to the console tab
+  */
 
-* /
-
-var myAddress = '100 F. Castro St Barangay 1 Nasugbu, Batangas' // Put here Your Complete Address
+// Put here Your Complete Address
+var myAddress = '100 F. Castro St Barangay 1 Nasugbu, Batangas';
+// Put here GPN # (You may found it on your GT&E Profile
 var gpn = 'PH011612696';
+// Contact Number (11 Digit)
 var contactNumber = "09176230820";
 
-stateChange('Question2');
-stateChange('Question3');
-stateChange('Question4');
+// stateChange('Question2'); 
+//stateChange('Question3-4');
   
+Question2();  
+Question3(); 
+Question4(); 
+			
 function stateChange(condition) {
     setTimeout(function () { 
 		switch(condition) {
 		  case "Question2": 
 			Question2();
-			break;
-		  case "Question3":
+		  case "Question3-4": 
 			Question3(); 
-			break;
-		  case "Question4":
 			Question4(); 
-			break;
+			break; 
 		  case "Question5":
 			Question5(); 
 			break;
@@ -64,10 +65,10 @@ function stateChange(condition) {
 			 // alert('Something went wrong possibly. Do something here and comment this line out!');
 		}
 		
-    }, 5000);
+    }, 1000);
 }
 
-/ * Process the clicking of Radio Buttons * /
+/* Process the clicking of Radio Buttons */
 function clickRadio(questionDescription, labelDescription) {
 	var lbls = document.getElementsByClassName('office-form-question-content office-form-theme-focus-border');
 	// console.log(lbls.length);
@@ -89,7 +90,7 @@ function clickRadio(questionDescription, labelDescription) {
 	}
 }
 
-/ * Process the filling up of text fields * /
+/* Process the filling up of text fields */
 function WriteValueToTextField(questionDescription,textFieldValue) {
 	var lbls = document.getElementsByClassName('office-form-question-content office-form-theme-focus-border');
 	// console.log(lbls.length);
